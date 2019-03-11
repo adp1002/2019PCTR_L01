@@ -21,7 +21,7 @@ public class Billiards extends JFrame {
 	// TODO update with number of group label. See practice statement.
 	private final int N_BALL = 5;
 	private Ball[] balls;
-	private Threads[] hilos;
+	private Thread[] hilos;
 
 	public Billiards() {
 
@@ -56,7 +56,7 @@ public class Billiards extends JFrame {
 	private void initBalls() {
 		// TODO init balls
 		balls = new Ball[N_BALL];
-		hilos = new Threads[N_BALL];
+		hilos = new Thread[N_BALL];
 
 		for (int i = 0; i < N_BALL; i++) {
 			balls[i] = new Ball();
@@ -68,6 +68,7 @@ public class Billiards extends JFrame {
 		@Override
 		public void actionPerformed(ActionEvent arg0) {
 			// TODO Code is executed when start button is pushed
+
 
 		}
 	}
