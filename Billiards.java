@@ -68,7 +68,10 @@ public class Billiards extends JFrame {
 		@Override
 		public void actionPerformed(ActionEvent arg0) {
 			// TODO Code is executed when start button is pushed
-
+			for (int i = 0; i < N_BALL; i++) {
+				hilos[i] = new Hilo(balls[i]);
+				hilos[i].start();
+			}
 
 		}
 	}
@@ -78,6 +81,28 @@ public class Billiards extends JFrame {
 		public void actionPerformed(ActionEvent arg0) {
 			// TODO Code is executed when stop button is pushed
 
+		}
+	}
+
+	private class Hilo extends Thread {
+
+		private Ball bola;
+		private Hilo(Ball bola) {
+			this.bola = bola;
+		}
+
+		@Override
+		public void run() {
+
+				while(!this.isInterrupted()) {
+					try {
+						bola.move();
+						board.repaint();
+						Thread.sleep(10);
+					} catch(InterruptedException e){
+						this.interrupt();
+					}
+				}
 		}
 	}
 
