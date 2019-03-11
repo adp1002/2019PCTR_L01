@@ -1,7 +1,7 @@
 import java.awt.Image;
 import javax.swing.ImageIcon;
 
-//TODO Transform the code to be used safely in a concurrent context.  
+//TODO Transform the code to be used safely in a concurrent context.
 public class Ball {
 	// TODO Find an archive named Ball.png
 	private String Ball = "Ball.png";
@@ -16,8 +16,8 @@ public class Ball {
 		image = ii.getImage();
 
 		// TODO Depend of image size
-		IMG_TAM_X = 32;
-		IMG_TAM_Y = 32;
+		IMG_TAM_X = 21;
+		IMG_TAM_Y = 21;
 
 		x = Billiards.Width / 4 - 16;
 		y = Billiards.Height / 2 - 16;
