@@ -89,22 +89,22 @@ public class Billiards extends JFrame {
 	private class Hilo extends Thread {
 
 		private Ball bola;
+
 		private Hilo(Ball bola) {
 			this.bola = bola;
 		}
 
 		@Override
 		public void run() {
-
-				while(!this.isInterrupted()) {
-					try {
-						bola.move();
-						board.repaint();
-						Thread.sleep(10);
-					} catch(InterruptedException e){
-						this.interrupt();
-					}
+			while (!isInterrupted()) {
+				try {
+					bola.move();
+					board.repaint();
+					Thread.sleep(10);
+				} catch (InterruptedException e) {
+					interrupt();
 				}
+			}
 		}
 	}
 
