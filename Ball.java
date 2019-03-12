@@ -39,8 +39,8 @@ public class Ball {
 		reflect();
 
 		// TODO Check postcondition
-		assert x >= 0 && x < Billiards.Width : "Bola fuera del tablero eje x.";
-		assert y >= 0 && y < Billiards.Height : "Bola fuera del tablero eje y.";
+		assert x > Board.LEFTBOARD && x < Board.RIGHTBOARD : "Bola fuera del tablero eje X.";
+		assert y > Board.TOPBOARD && y < Board.BOTTOMBOARD : "Bola fuera del tablero eje Y.";
 	}
 
 	private void reflect() {
